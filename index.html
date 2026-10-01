@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LUMÉA Beauty Studio — premium beauty, hair, skin and bridal services.">
+<title>LUMÉA Beauty Studio | Premium Salon</title>
+<style>
+:root{--dark:#171217;--rose:#b76e79;--rose2:#e9b9bf;--cream:#fff9f6;--muted:#766b70;--white:#fff;--gold:#c99a5b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--dark);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(255,249,246,.94);backdrop-filter:blur(12px);border-bottom:1px solid #eadcdf}
+.navin{max-width:1180px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;letter-spacing:3px;font-weight:bold}.logo span{color:var(--rose)}
+.links{display:flex;gap:25px;font-size:14px}.links a:hover{color:var(--rose)}
+.menu{display:none;border:0;background:none;font-size:25px}
+.btn{display:inline-block;background:var(--dark);color:#fff;padding:13px 22px;border-radius:3px;border:0;cursor:pointer;transition:.25s}.btn:hover{background:var(--rose)}
+.btn.light{background:#fff;color:var(--dark)}.btn.outline{background:transparent;border:1px solid var(--dark);color:var(--dark)}
+.hero{min-height:100vh;padding:150px 7% 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;background:radial-gradient(circle at 85% 25%,#f1d7da 0,transparent 32%),var(--cream)}
+.eyebrow{color:var(--rose);letter-spacing:4px;text-transform:uppercase;font-size:12px;font-weight:bold}
+h1{font-size:clamp(48px,7vw,88px);line-height:.98;margin:18px 0 25px;font-weight:500}
+.hero p{max-width:570px;color:var(--muted);font-size:18px}
+.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.hero-card{min-height:570px;border-radius:180px 180px 15px 15px;background:linear-gradient(145deg,#eed0d3,#bd858d);display:flex;align-items:end;justify-content:center;padding:35px;box-shadow:0 25px 60px #8f646622}
+.hero-card .cardtxt{background:#fff;max-width:280px;padding:22px;text-align:center;margin-bottom:15px;box-shadow:0 15px 35px #0002}
+section{padding:95px 7%}.section-head{text-align:center;max-width:700px;margin:0 auto 50px}.section-head h2{font-size:46px;font-weight:500;margin:10px}.section-head p{color:var(--muted)}
+.services{background:#fff}.grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{background:var(--cream);padding:30px;border:1px solid #eedfe2;transition:.25s}.service:hover{transform:translateY(-5px);box-shadow:0 15px 35px #0000000d}
+.icon{font-size:30px;color:var(--rose)}.service h3{font-size:22px;margin:12px 0 6px}.service p{color:var(--muted);font-size:14px}.price{display:block;margin-top:18px;color:var(--rose);font-weight:bold}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1180px;margin:auto;align-items:center}.aboutbox{background:#ead0d2;min-height:460px;padding:45px;display:flex;align-items:end}.aboutbox div{background:#fff;padding:25px;width:100%}.about h2{font-size:48px;font-weight:500;line-height:1.05;margin:12px 0 20px}.about p{color:var(--muted);margin-bottom:15px}
+.stats{display:flex;gap:35px;margin-top:25px}.stats strong{font-size:28px;display:block}.stats small{color:var(--muted)}
+.offer{background:var(--dark);color:#fff;text-align:center}.offer p{color:#d9cdd0}.offer h2{font-size:52px;font-weight:500;margin:10px}
+.bridal{background:#f5e5e5}.packages{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.package{background:#fff;padding:30px;text-align:center;border:1px solid #ead8da}.package.featured{border:2px solid var(--rose);transform:translateY(-8px)}.package h3{font-size:25px}.package b{font-size:30px;color:var(--rose);display:block;margin:12px}.package ul{list-style:none;color:var(--muted);font-size:14px}.package li{padding:5px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1180px;margin:auto}.photo{height:250px;background:linear-gradient(135deg,#e8c4c7,#b87a83);display:flex;align-items:end;padding:18px;color:#fff;font-size:20px}.photo:nth-child(2){background:linear-gradient(135deg,#d5b39b,#8b675d)}.photo:nth-child(3){background:linear-gradient(135deg,#f0d8bd,#b9886a)}.photo:nth-child(4){background:linear-gradient(135deg,#d6c5d5,#7d657c)}
+.testimonials{background:#fff}.reviews{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{padding:28px;background:var(--cream);border:1px solid #eedfe2}.stars{color:var(--gold);letter-spacing:3px}.review p{font-style:italic;margin:15px 0;color:#51474b}.review b{font-size:14px}
+.booking{max-width:1000px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}.booking h2{font-size:45px;font-weight:500}.booking p{color:var(--muted);margin:15px 0}.contactline{padding:10px 0}.form{background:#fff;padding:30px;box-shadow:0 15px 40px #0000000b}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form input,.form select,.form textarea{width:100%;padding:13px;border:1px solid #dfd2d5;background:#fff9f9;outline:none}.form textarea{min-height:100px;resize:vertical;margin-top:14px}.form .btn{width:100%;margin-top:14px}
+footer{background:#171217;color:#fff;padding:45px 7%;text-align:center}.footerlogo{font-size:25px;letter-spacing:4px}.footerlogo span{color:var(--rose2)}footer p{color:#bdb1b5;margin:10px}
+.toast{position:fixed;right:20px;bottom:20px;background:#171217;color:#fff;padding:14px 20px;display:none;z-index:50;border-left:4px solid var(--rose)}
+@media(max-width:800px){.links{display:none}.menu{display:block}.hero{grid-template-columns:1fr;padding-top:120px}.hero-card{min-height:420px}.grid,.reviews,.packages{grid-template-columns:1fr}.about,.booking{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.photo{height:190px}.stats{gap:18px}.section-head h2,.about h2,.booking h2{font-size:38px}.package.featured{transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="navin">
+<a class="logo" href="#">LUMÉA<span>.</span></a>
+<div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#bridal">Bridal</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#book">Book</a></div>
+<a class="btn" href="#book">Book Appointment</a><button class="menu" onclick="toggleMenu()">☰</button>
+</div></nav>
+
+<header class="hero">
+<div>
+<div class="eyebrow">Beauty • Hair • Skin • Bridal</div>
+<h1>Where beauty<br><i>becomes art.</i></h1>
+<p>A premium beauty studio created for effortless confidence. From signature hair transformations to glowing skin and unforgettable bridal looks.</p>
+<div class="actions"><a class="btn" href="#book">Reserve Your Seat</a><a class="btn outline" href="#services">Explore Services</a></div>
+</div>
+<div class="hero-card"><div class="cardtxt"><b>YOUR BEAUTY, OUR CRAFT</b><br><small>Personalized treatments • Premium products • Expert artists</small></div></div>
+</header>
+
+<section id="services" class="services">
+<div class="section-head"><div class="eyebrow">Our Menu</div><h2>Signature Services</h2><p>Everything you need for hair, skin, nails, makeup and complete beauty care — all under one roof.</p></div>
+<div class="grid">
+<div class="service"><div class="icon">✦</div><h3>Hair Styling</h3><p>Cut, blow-dry, styling, curls, straightening and event-ready transformations.</p><span class="price">From $25</span></div>
+<div class="service"><div class="icon">✧</div><h3>Hair Color</h3><p>Balayage, highlights, global color, root touch-up and professional color care.</p><span class="price">From $55</span></div>
+<div class="service"><div class="icon">♡</div><h3>Facials & Skin</h3><p>Deep cleansing, hydration, brightening, glow facials and relaxing skin rituals.</p><span class="price">From $35</span></div>
+<div class="service"><div class="icon">◇</div><h3>Makeup</h3><p>Party makeup, soft glam, HD makeup and customized looks for every occasion.</p><span class="price">From $45</span></div>
+<div class="service"><div class="icon">❋</div><h3>Nails</h3><p>Manicure, pedicure, gel polish, nail art and luxury hand & foot care.</p><span class="price">From $20</span></div>
+<div class="service"><div class="icon">♢</div><h3>Brows & Lashes</h3><p>Threading, shaping, tinting, lash lifting and polished finishing touches.</p><span class="price">From $15</span></div>
+</div>
+</section>
+
+<section id="about"><div class="about">
+<div class="aboutbox"><div><div class="eyebrow">The Studio</div><h3>Beauty with intention.</h3><p>Relax, refresh and leave feeling like the best version of yourself.</p></div></div>
+<div><div class="eyebrow">About Luméa</div><h2>A little luxury.<br>A lot of confidence.</h2><p>At LUMÉA, every appointment is personal. Our beauty artists combine modern techniques with thoughtful service to create results that feel uniquely yours.</p><p>We believe your salon visit should feel less like an appointment and more like time reserved for you.</p><div class="stats"><div><strong>5K+</strong><small>Happy Guests</small></div><div><strong>8+</strong><small>Beauty Experts</small></div><div><strong>4.9/5</strong><small>Guest Rating</small></div></div></div>
+</div></section>
+
+<section class="offer"><div class="section-head"><div class="eyebrow">Limited Offer</div><h2>New Guest Glow</h2><p>Enjoy <b>15% OFF</b> your first beauty service when you book this month.</p><br><a class="btn light" href="#book">Claim Offer</a></div></section>
+
+<section id="bridal" class="bridal">
+<div class="section-head"><div class="eyebrow">Bridal Atelier</div><h2>Your day. Your signature look.</h2><p>Bridal beauty packages designed around your wedding timeline, outfit and personal style.</p></div>
+<div class="packages">
+<div class="package"><h3>Essential</h3><b>$199</b><ul><li>Bridal Makeup</li><li>Hair Styling</li><li>Brows & Lashes</li><li>Touch-up Kit</li></ul><br><a class="btn outline" href="#book">Enquire</a></div>
+<div class="package featured"><div class="eyebrow">Most Requested</div><h3>Signature</h3><b>$349</b><ul><li>HD Bridal Makeup</li><li>Luxury Hair Styling</li><li>Facial Prep</li><li>Brows & Lashes</li><li>Trial Session</li></ul><br><a class="btn" href="#book">Enquire</a></div>
+<div class="package"><h3>Royal</h3><b>$499</b><ul><li>Premium Bridal Makeup</li><li>Hair Transformation</li><li>Pre-Wedding Facial</li><li>Hands & Feet Care</li><li>Trial + Touch-up</li></ul><br><a class="btn outline" href="#book">Enquire</a></div>
+</div></section>
+
+<section id="gallery"><div class="section-head"><div class="eyebrow">Our Work</div><h2>Beauty in every detail.</h2></div>
+<div class="gallery"><div class="photo">Hair Artistry</div><div class="photo">Soft Glam</div><div class="photo">Bridal Glow</div><div class="photo">Nail Details</div></div></section>
+
+<section id="reviews" class="testimonials"><div class="section-head"><div class="eyebrow">Guest Love</div><h2>What our guests say</h2></div>
+<div class="reviews">
+<div class="review"><div class="stars">★★★★★</div><p>“The team understood exactly what I wanted. My hair looked beautiful and the whole experience was so relaxing.”</p><b>— Sofia R.</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>“I booked my bridal package here and felt completely taken care of from the trial to the wedding day.”</p><b>— Emma K.</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Beautiful studio, professional service and the best facial glow I've had in a long time.”</p><b>— Mia A.</b></div>
+</div></section>
+
+<section id="book"><div class="booking">
+<div><div class="eyebrow">Appointments</div><h2>Ready for your glow?</h2><p>Tell us what you need and our team will get back to confirm your appointment.</p>
+<div class="contactline">📍 24 Rose Avenue, Downtown</div><div class="contactline">☎ +1 (555) 123-4567</div><div class="contactline">✉ hello@lumeabeauty.com</div><div class="contactline">⏰ Mon–Sat: 10:00 AM – 8:00 PM</div></div>
+<div class="form"><form onsubmit="book(event)"><div class="formgrid"><input required placeholder="Your Name"><input required type="tel" placeholder="Phone Number"><input required type="date"><select required><option value="">Choose Service</option><option>Hair Styling</option><option>Hair Color</option><option>Facial & Skin</option><option>Makeup</option><option>Nails</option><option>Bridal Package</option></select></div><textarea placeholder="Anything you'd like us to know?"></textarea><button class="btn" type="submit">Request Appointment →</button></form></div>
+</div></section>
+
+<footer><div class="footerlogo">LUMÉA<span>.</span></div><p>Premium Beauty Studio • Hair • Skin • Makeup • Bridal</p><p>© 2026 LUMÉA Beauty Studio. All rights reserved.</p></footer>
+<div class="toast" id="toast">✨ Thank you! Your appointment request has been received.</div>
+<script>
+function toggleMenu(){const l=document.querySelector('.links');l.style.display=l.style.display==='flex'?'none':'flex';l.style.position='absolute';l.style.top='65px';l.style.right='20px';l.style.flexDirection='column';l.style.background='#fff';l.style.padding='20px';l.style.boxShadow='0 10px 30px #0002'}
+function book(e){e.preventDefault();document.getElementById('toast').style.display='block';setTimeout(()=>document.getElementById('toast').style.display='none',4000);e.target.reset()}
+</script>
+</body>
+</html>
